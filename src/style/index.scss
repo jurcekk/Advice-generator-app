@@ -1,0 +1,13 @@
+@use "colors" as colors;
+@use "typography" as font;
+
+//Mobile: 375px
+//Desktop: 1440px
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: colors.$DarkBlue;
+    font-family: font.$font;
+}

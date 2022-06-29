@@ -8,14 +8,18 @@ function App() {
   const [advice, setAdvice] = useState([]);
 //https://api.adviceslip.com/advice
 
-useEffect(()=> {
+function Loading() {
   fetch("https://api.adviceslip.com/advice").then(response => {
     return response.json();
   }).then(function(data){
     let advice:any = [data.slip.advice, data.slip.id]
     setAdvice(advice);
   } )
+}
+useEffect(()=> {
+  Loading();
 }, [])
+
   return (
     <div className="container">
        {/* <h1>{advice}</h1> */}
@@ -24,8 +28,9 @@ useEffect(()=> {
       <p className='advice'>
         {advice[0]}
       </p>
-      <img src={divider} alt="Divider" className='divider'/><br />
-      <div className='iconContainer'>
+      <div className='dividerContainer'>
+      </div>
+      <div className='iconContainer' onClick={Loading}>
       <img src={icon} alt="Icon" className='icon'/>
       </div>
      </div>

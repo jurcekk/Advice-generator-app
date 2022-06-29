@@ -1,8 +1,6 @@
 @use "colors" as colors;
 @use "typography" as font;
-
-//Mobile: 375px
-//Desktop: 1440px
+@use "variables" as var;
 
 body {
     margin: 0;
@@ -28,7 +26,8 @@ body {
         padding: 20px;
         background-color: colors.$DarkGrayishBlue;
         border-radius: 10px;
-
+        
+        
 
         .id {
             color: colors.$NeonGreen;
@@ -47,24 +46,51 @@ body {
                 font-size: font.$fontSize;          
             }
         }
+        .dividerContainer{
+            width: 100%;
+            height: 16px;
+            margin: 40px 0;
+            background-image: url("../images/pattern-divider-desktop.svg");
+            background-repeat: no-repeat;
+            background-position: center;
         .divider {
             margin-bottom: 50px;
+        }
         }
         .iconContainer{
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto;
             width: 32px;
             height: 32px;
             padding: 20px;
             border-radius: 50%;
             bottom: -38px;
             left: 234px;
-            border: 1px solid colors.$NeonGreen;
             background-color: colors.$NeonGreen;
             position: absolute;
-        .icon {
-        }}
+            cursor: pointer;
+            &:hover {
+                background-color: colors.$NeonGreen;
+                box-shadow: 0 0 10px colors.$NeonGreen, 0 0 40px colors.$NeonGreen, 0 0 80px colors.$NeonGreen;
+            }
+        }
     }
+}
+@include var.small {
+    .container {
+        width: 100vw !important;
+        .card {
+            width: auto;
+            margin: 10px;
+        }
+        .dividerContainer {
+            background-image: url("../images/pattern-divider-mobile.svg");
+        }
+        .iconContainer {
+            left: 141.5px !important;
+        }
+        
+    }
+    
 }

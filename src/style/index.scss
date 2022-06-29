@@ -11,3 +11,60 @@ body {
     background-color: colors.$DarkBlue;
     font-family: font.$font;
 }
+
+
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    .card {
+        position: relative;
+        width: 500px;
+        height: auto;
+        padding: 20px;
+        background-color: colors.$DarkGrayishBlue;
+        border-radius: 10px;
+
+
+        .id {
+            color: colors.$NeonGreen;
+            letter-spacing: 5px;
+            font-size: 12px;
+        }
+        .advice {
+            color: colors.$lightCyan;
+            font-size: font.$fontSize;
+            &::before{
+                content: open-quote;
+                font-size: font.$fontSize;
+            }
+            &::after{
+                content: close-quote;  
+                font-size: font.$fontSize;          
+            }
+        }
+        .divider {
+            margin-bottom: 50px;
+        }
+        .iconContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 32px;
+            height: 32px;
+            padding: 20px;
+            border-radius: 50%;
+            bottom: -38px;
+            left: 234px;
+            border: 1px solid colors.$NeonGreen;
+            background-color: colors.$NeonGreen;
+            position: absolute;
+        .icon {
+        }}
+    }
+}

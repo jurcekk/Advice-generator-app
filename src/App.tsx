@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import "./style/index.scss";
-import divider from "./images/pattern-divider-desktop.svg";
 import icon from "./images/icon-dice.svg";
 import './App.css';
 

@@ -6,7 +6,7 @@ function App() {
   const [advice, setAdvice] = useState<string[]>([]);
 
   function Loading() {
-    fetch("https://api.adviceslip.com/advice")
+    fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
       .then((response) => {
         return response.json();
       })

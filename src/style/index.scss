@@ -3,94 +3,102 @@
 @use "variables" as var;
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: colors.$DarkBlue;
-    font-family: font.$font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: colors.$DarkBlue;
+  font-family: font.$font;
 }
-
 
 .container {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    .card {
-        position: relative;
-        width: 500px;
-        height: auto;
-        padding: 20px;
-        background-color: colors.$DarkGrayishBlue;
-        border-radius: 10px;
-        
-        
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 
-        .id {
-            color: colors.$NeonGreen;
-            letter-spacing: 5px;
-            font-size: 12px;
-        }
-        .advice {
-            color: colors.$lightCyan;
-            font-size: font.$fontSize;
-            &::before{
-                content: open-quote;
-                font-size: font.$fontSize;
-            }
-            &::after{
-                content: close-quote;  
-                font-size: font.$fontSize;          
-            }
-        }
-        .dividerContainer{
-            width: 100%;
-            height: 16px;
-            margin: 40px 0;
-            background-image: url("../images/pattern-divider-desktop.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-        .divider {
-            margin-bottom: 50px;
-        }
-        }
-        .iconContainer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 32px;
-            height: 32px;
-            padding: 20px;
-            border-radius: 50%;
-            bottom: -38px;
-            left: 234px;
-            background-color: colors.$NeonGreen;
-            position: absolute;
-            cursor: pointer;
-            &:hover {
-                background-color: colors.$NeonGreen;
-                box-shadow: 0 0 10px colors.$NeonGreen, 0 0 40px colors.$NeonGreen, 0 0 80px colors.$NeonGreen;
-            }
-        }
+  .card {
+    position: relative;
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    background-color: colors.$DarkGrayishBlue;
+    border-radius: 10px;
+
+    .id {
+      color: colors.$NeonGreen;
+      letter-spacing: 5px;
+      font-size: 12px;
     }
+
+    .advice {
+      color: colors.$lightCyan;
+      font-size: font.$fontSize;
+
+      &::before {
+        content: open-quote;
+        font-size: font.$fontSize;
+      }
+
+      &::after {
+        content: close-quote;
+        font-size: font.$fontSize;
+      }
+    }
+
+    .dividerContainer {
+      width: 100%;
+      height: 16px;
+      margin: 40px 0;
+      background-image: url("../images/pattern-divider-desktop.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      .divider {
+        margin-bottom: 50px;
+      }
+    }
+
+    .iconContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      padding: 20px;
+      border-radius: 50%;
+      bottom: -38px;
+      left: 234px;
+      background-color: colors.$NeonGreen;
+      position: absolute;
+      cursor: pointer;
+
+      &:hover {
+        background-color: colors.$NeonGreen;
+        box-shadow: 0 0 10px colors.$NeonGreen, 0 0 40px colors.$NeonGreen,
+          0 0 80px colors.$NeonGreen;
+      }
+    }
+  }
 }
+
 @include var.small {
-    .container {
-        width: 100vw !important;
-        .card {
-            width: auto;
-            margin: 20px;
-        }
-        .dividerContainer {
-            background-image: url("../images/pattern-divider-mobile.svg");
-        }
-        .iconContainer {
-            left: 131.5px !important;
-        }
-        
+  .container {
+    width: 100vw;
+
+    .card {
+      width: auto;
+      margin: 20px;
     }
-    
+
+    .dividerContainer {
+      background-image: url("../images/pattern-divider-mobile.svg");
+    }
+
+    .iconContainer {
+      left: calc(267px / 2) !important;
+    }
+  }
 }
